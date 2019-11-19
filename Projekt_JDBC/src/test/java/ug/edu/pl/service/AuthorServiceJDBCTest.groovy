@@ -22,6 +22,10 @@ class AuthorServiceJDBCTest extends GroovyTestCase {
         AuthorServiceJDBC authserv= new AuthorServiceJDBC();
         Assert.assertNotNull(authserv.getAuthors());
     }
+    void testGetAuthorsByBeginning(){
+        AuthorServiceJDBC authserv= new AuthorServiceJDBC();
+        Assert.assertNotNull(authserv.getAuthorsByNameBeginning(""));
+    }
 
     void testAddAuthors() {
 

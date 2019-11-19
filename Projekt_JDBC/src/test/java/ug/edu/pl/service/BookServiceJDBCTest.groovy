@@ -35,5 +35,10 @@ class BookServiceJDBCTest extends GroovyTestCase {
         assertEquals(blist.size(), bs.addBooks(blist));
 
     }
+    void testGetFromAuthor(){
+        BookServiceJDBC bs= new BookServiceJDBC();
+        Assert.assertNotNull(bs.getFromAuthor(1));
+    }
+
 
 }

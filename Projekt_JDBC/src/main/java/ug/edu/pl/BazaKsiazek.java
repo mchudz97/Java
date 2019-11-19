@@ -13,8 +13,11 @@ public class BazaKsiazek {
     public static void main(String[] args) throws SQLException {
 
         AuthorServiceJDBC as= new AuthorServiceJDBC();
-        int i=as.dropAuthor();
-        System.out.println(i);
+
+        List<Author> check=as.getAuthorsByNameBeginning("J");;
+        for (Author a: check) {
+            System.out.println(a);
+        }
         /*Author jan= new Author("a","b", 22, 5,1990);
 
         BookServiceJDBC bs= new BookServiceJDBC();

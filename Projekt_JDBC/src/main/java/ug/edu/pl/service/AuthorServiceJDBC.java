@@ -15,13 +15,14 @@ public class AuthorServiceJDBC implements AuthorService {
     private final String DELETE_BY_ID="DELETE FROM AUTHOR WHERE id=?";
     private final String UPDATE_BY_ID="UPDATE AUTHOR SET name=?, pername=?, birthdate=? WHERE id=? ";
     private final String DROP_TABLE="DROP TABLE IF EXISTS AUTHOR";
+    private final String SELECT_BY_BEGINNING="SELECT * FROM AUTHOR WHERE name LIKE ?;";
     private Connection con;
     private PreparedStatement insertA;
     private PreparedStatement selectA;
     private PreparedStatement deleteA;
     private PreparedStatement updateA;
     private PreparedStatement dropA;
-
+    private PreparedStatement selectABB;
 
 
     public AuthorServiceJDBC(){
@@ -35,6 +36,7 @@ public class AuthorServiceJDBC implements AuthorService {
             updateA=con.prepareStatement(UPDATE_BY_ID);
             deleteA=con.prepareStatement(DELETE_BY_ID);
             dropA=con.prepareStatement(DROP_TABLE);
+            selectABB=con.prepareStatement(SELECT_BY_BEGINNING);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -86,7 +88,27 @@ public class AuthorServiceJDBC implements AuthorService {
         }
         return -1;
     }
+    public List<Author> getAuthorsByNameBeginning(String regex){
+        try {
+            List<Author> result= new ArrayList<Author>(0);
+            selectABB.setString(1, regex+"%");
+            ResultSet rs = selectABB.executeQuery();
+            while(rs.next()){
+                int id= rs.getInt("id");
+                String name= rs.getString("name");
+                String pername= rs.getString("pername");
+                String birthdate= rs.getDate("birthdate").toString();
+                String[] parts = birthdate.split("-");
+                result.add(new Author(id, name, pername, Integer.parseInt(parts[2]), Integer.parseInt(parts[1]), Integer.parseInt(parts[0])));
+            }
+            rs.close();
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        return null;
+    }
     public List<Author> getAuthors() {
 
         try {

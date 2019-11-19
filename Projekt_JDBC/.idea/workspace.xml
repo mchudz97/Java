@@ -9,7 +9,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="22" />
+    <option name="myElementSize" value="15" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -142,6 +142,6 @@
       <FILTER>ug.edu.pl.domain.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Projekt_JDBC$Tester.ic" NAME="Tester Coverage Results" MODIFIED="1574016644667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Projekt_JDBC$All_in_Projekt_JDBC.ic" NAME="All in Projekt_JDBC Coverage Results" MODIFIED="1574121877215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Projekt_JDBC$All_in_Projekt_JDBC.ic" NAME="All in Projekt_JDBC Coverage Results" MODIFIED="1574156041360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
