@@ -11,8 +11,11 @@ import java.util.List;
 
 public class BazaKsiazek {
     public static void main(String[] args) throws SQLException {
-        /*AuthorServiceJDBC as= new AuthorServiceJDBC();
-        Author jan= new Author("a","b", 22, 5,1990);
+
+        AuthorServiceJDBC as= new AuthorServiceJDBC();
+        int i=as.dropAuthor();
+        System.out.println(i);
+        /*Author jan= new Author("a","b", 22, 5,1990);
 
         BookServiceJDBC bs= new BookServiceJDBC();
         Book ks1= new Book("fajna", "Bekowo", 22,5,1990,1);

@@ -64,12 +64,14 @@ public class AuthorServiceJDBC implements AuthorService {
         }
     }
 
-    public void dropAuthor(){
+    public int dropAuthor(){
         try {
-            dropA.executeUpdate();
+            int i=dropA.executeUpdate();
+            return i;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return -1;
     }
 
     public int addAuthor(Author a) {
@@ -82,12 +84,13 @@ public class AuthorServiceJDBC implements AuthorService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 0;
+        return -1;
     }
 
     public List<Author> getAuthors() {
-        List<Author> result= new ArrayList<Author>(0);
+
         try {
+            List<Author> result= new ArrayList<Author>(0);
             ResultSet rs = selectA.executeQuery();
             while(rs.next()){
                 int id= rs.getInt("id");
@@ -98,11 +101,12 @@ public class AuthorServiceJDBC implements AuthorService {
                 result.add(new Author(id, name, pername, Integer.parseInt(parts[2]), Integer.parseInt(parts[1]), Integer.parseInt(parts[0])));
             }
             rs.close();
+            return result;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return result;
+        return null;
     }
 
     public int addAuthors(List<Author> authors) {

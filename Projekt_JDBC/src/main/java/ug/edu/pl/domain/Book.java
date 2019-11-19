@@ -26,6 +26,13 @@ public class Book {
         this.yyyy=yyyy;
         this.author_id=idA;
     }
+    public Book(String t, String p, int dd, int mm, int yyyy){
+        this.title=t;
+        this.publishing=p;
+        this.dd=dd;
+        this.mm=mm;
+        this.yyyy=yyyy;
+    }
     private String ddToDay(){
 
         if(this.dd<10) return "0"+dd;

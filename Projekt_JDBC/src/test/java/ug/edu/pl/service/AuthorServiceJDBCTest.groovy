@@ -1,10 +1,16 @@
 package ug.edu.pl.service
 
-import org.junit.Test
+import org.junit.*
 import ug.edu.pl.domain.Author
 
 class AuthorServiceJDBCTest extends GroovyTestCase {
     @Test
+
+    void testDropAuthor(){
+        AuthorServiceJDBC authserv= new AuthorServiceJDBC();
+        assertEquals(0,authserv.dropAuthor());
+    }
+
     void testAddAuthor() {
         Author a= new Author("Jan", "Brzeg", 11, 1,1990);
         AuthorServiceJDBC authserv= new AuthorServiceJDBC();
@@ -12,7 +18,10 @@ class AuthorServiceJDBCTest extends GroovyTestCase {
 
     }
 
-
+    void testGetAuthors(){
+        AuthorServiceJDBC authserv= new AuthorServiceJDBC();
+        Assert.assertNotNull(authserv.getAuthors());
+    }
 
     void testAddAuthors() {
 

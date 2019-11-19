@@ -9,7 +9,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="44" />
+    <option name="myElementSize" value="22" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BazaKsiazek">
+  <component name="RunManager" selected="JUnit.All in Projekt_JDBC">
     <configuration name="BookTest.Book_Check_Date_Month" type="AndroidJUnit" temporary="true" nameIsGenerated="true">
       <module name="Projekt_JDBC" />
       <option name="PACKAGE_NAME" value="" />
@@ -142,6 +142,6 @@
       <FILTER>ug.edu.pl.domain.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Projekt_JDBC$Tester.ic" NAME="Tester Coverage Results" MODIFIED="1574016644667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Projekt_JDBC$All_in_Projekt_JDBC.ic" NAME="All in Projekt_JDBC Coverage Results" MODIFIED="1574110996612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Projekt_JDBC$All_in_Projekt_JDBC.ic" NAME="All in Projekt_JDBC Coverage Results" MODIFIED="1574121877215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

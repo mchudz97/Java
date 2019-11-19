@@ -61,19 +61,25 @@ public class BookServiceJDBC implements BookService {
 
     }
 
-    public void deleteBook(int idB) throws SQLException {
+    public int deleteBook(int idB) {
 
-        deleteB.setString(1, Integer.toString(idB));
-        deleteB.executeUpdate();
 
-    }
-
-    public void dropBook(){
         try {
-            dropB.executeUpdate();
+            deleteB.setString(1, Integer.toString(idB));
+            return deleteB.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return -1;
+    }
+
+    public int dropBook(){
+        try {
+            return dropB.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 
     public int addBook(Book b) {
@@ -87,11 +93,12 @@ public class BookServiceJDBC implements BookService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 0;
+        return -1;
     }
     public List<Book> getFromAuthor(int idA){
-        List<Book> result= new ArrayList<Book>(0);
+
         try {
+            List<Book> result= new ArrayList<Book>(0);
             selectByAuthor.setString(1,Integer.toString(idA) );
             ResultSet rs = selectByAuthor.executeQuery();
             while(rs.next()){
@@ -104,11 +111,12 @@ public class BookServiceJDBC implements BookService {
                 result.add(new Book(id, title, publishing, Integer.parseInt(parts[2]), Integer.parseInt(parts[1]), Integer.parseInt(parts[0]), idAuthor));
             }
             rs.close();
+            return result;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return result;
+        return null;
     }
 
     public List<Book> getBooks() {
@@ -152,6 +160,6 @@ public class BookServiceJDBC implements BookService {
 
             e.printStackTrace();
         }
-        return 0;
+        return -1;
     }
 }
